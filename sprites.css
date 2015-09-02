@@ -1,0 +1,48 @@
+.icon-cart {
+  background-image: url(images/spritesheet.png);
+  background-position: 0px -64px;
+  width: 31px;
+  height: 32px;
+}
+.icon-down {
+  background-image: url(images/spritesheet.png);
+  background-position: -23px -96px;
+  width: 23px;
+  height: 13px;
+}
+.icon-facebook {
+  background-image: url(images/spritesheet.png);
+  background-position: -123px -64px;
+  width: 28px;
+  height: 28px;
+}
+.icon-google_translate_copyrighted {
+  background-image: url(images/spritesheet.png);
+  background-position: -63px -64px;
+  width: 30px;
+  height: 30px;
+}
+.icon-logo-footer {
+  background-image: url(images/spritesheet.png);
+  background-position: 0px 0px;
+  width: 163px;
+  height: 64px;
+}
+.icon-note {
+  background-image: url(images/spritesheet.png);
+  background-position: -93px -64px;
+  width: 30px;
+  height: 30px;
+}
+.icon-right {
+  background-image: url(images/spritesheet.png);
+  background-position: 0px -96px;
+  width: 23px;
+  height: 16px;
+}
+.icon-share {
+  background-image: url(images/spritesheet.png);
+  background-position: -31px -64px;
+  width: 32px;
+  height: 32px;
+}
