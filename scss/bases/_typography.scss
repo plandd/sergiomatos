@@ -1,0 +1,96 @@
+// Family
+// ----------------------------------------------------------------------------
+.regular {
+	font-family: $body-font-family !important;
+}
+.regular-bold {
+	font-family: 'Baufra-Bold' !important;
+}
+.header-type {
+	font-family: 'GothamBold' !important;
+}
+
+// SIZES
+// ----------------------------------------------------------------------------
+.font-small {
+	font-size: rem-calc(12);
+}
+.font-medium {
+	font-size: rem-calc(14);
+}
+.font-normal {
+	font-size: rem-calc(16);
+}
+
+// LINE-HEIGHTS
+// ----------------------------------------------------------------------------
+.lh-1 {
+	line-height: 1;
+}
+.lh-0 {
+	line-height: 0;
+}
+.lh-12 {
+	line-height: 1.2;
+}
+.lh-14 {
+	line-height: 1.4;
+}
+.lh-15 {
+	line-height: 1.5;
+}
+
+// WEIGHTS
+// ----------------------------------------------------------------------------
+/*.font-regular {
+	font-family: 'ProximaNova-Regular';
+}
+.font-bold {
+	font-family: 'ProximaNova-Bold';
+}
+.font-black {
+	font-family: 'ProximaNova-Black';
+}
+.font-light {
+	font-family: 'ProximaNova-Light';
+}
+.font-extra {
+	font-family: 'ProximaNova-Extrabld';
+}*/
+
+// TRANSFORMS / DECORATIONS
+// ----------------------------------------------------------------------------
+.text-up {
+	text-transform: uppercase;
+}
+.text-low {
+	text-transform: lowercase;
+}
+
+.text-under {
+	text-decoration: underline;
+}
+
+// COLORS
+// ----------------------------------------------------------------------------
+.primary {
+	color: $primary-color;
+}
+.secondary {
+	color: $secondary-color;
+}
+.white {
+	color: $white;
+}
+.jet {
+	color: $jet;
+}
+.paragraph {
+	color: $body-font-color;
+}
+.less-opacity {
+	@extend %transition;
+	&:hover {
+		opacity: .8;
+	}
+}

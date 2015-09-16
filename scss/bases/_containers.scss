@@ -1,0 +1,121 @@
+// BACKGROUNDS
+// ----------------------------------------------------------------------------
+.bg-primary {
+	background-color: $primary-color;
+}
+.bg-secondary {
+	background-color: $secondary-color;
+}
+.bg-white {
+	background-color: $white;
+}
+.bg-ocean {
+	background-color: $ocean;
+}
+.bg-salmon {
+	background-color: $salmon;
+}
+.bg-gold {
+	background-color: $gold;
+}
+.bg-cover {
+	background-size: cover;
+	background-position: center;
+}
+*[data-thumb] {
+	@extend .bg-cover;
+}
+
+// DISPLAYS
+// ----------------------------------------------------------------------------
+.d-block {
+	display: block;
+}
+.d-iblock {
+	display: inline-block;
+}
+.d-table {
+	display: table;
+}
+.d-table-cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+.rel {
+	position: relative;
+}
+.abs {
+	position: absolute;
+}
+.full-height {
+	@extend %full-height;
+}
+
+// MARGINS
+// ----------------------------------------------------------------------------
+.no-margin {
+	margin: 0 !important;
+}
+
+.divide-20 {
+	@extend .small-12;
+	@extend .left;
+	margin-bottom: rem-calc(20);
+}
+
+.divide-30 {
+	@extend .small-12;
+	@extend .left;
+	margin-bottom: rem-calc(30);
+}
+
+.divide-40 {
+	@extend .small-12;
+	@extend .left;
+	margin-bottom: rem-calc(40);
+}
+
+.divide-10 {
+	@extend .small-12;
+	@extend .left;
+	margin-bottom: rem-calc(10);
+}
+
+//seções
+.section-20 {
+	padding-top: rem-calc(20);
+	padding-bottom: rem-calc(20);
+}
+
+.section-30 {
+	padding-top: rem-calc(30);
+	padding-bottom: rem-calc(30);
+}
+
+.section-40 {
+	padding-top: rem-calc(40);
+	padding-bottom: rem-calc(40);
+}
+
+.section-60 {
+	padding-top: rem-calc(60);
+	padding-bottom: rem-calc(60);
+}
+
+
+// Paineis
+// ----------------------------------------------------------------------------
+.panel-30 {
+	@extend .small-12;
+	@extend .left;
+	@extend .d-block;
+	padding: rem-calc(30);
+}
+
+.show-onload {
+	opacity: 0;
+	@extend %transition;
+	&.show {
+		opacity: 1;
+	}
+}

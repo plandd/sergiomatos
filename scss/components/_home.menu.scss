@@ -1,0 +1,25 @@
+.logo-home {
+	top: rem-calc(5);
+	left: rem-calc(60);
+	z-index: 9999;
+	@extend .no-margin;
+	@extend .less-opacity;
+}
+
+#main-menu-home {
+	padding-top: rem-calc(80);
+	li {
+		@extend .small-12;
+		@extend .left;
+		@extend .less-opacity;
+	}
+	a  {
+		@extend .d-block;
+		@extend .left;
+		@extend .text-up;
+		@extend .font-medium;
+		@extend .regular-bold;
+
+		margin-bottom: rem-calc(30);
+	}
+}

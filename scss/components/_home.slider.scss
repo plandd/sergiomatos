@@ -1,0 +1,83 @@
+$slider_height: rem-calc(813);
+$slider_xheight: rem-calc(1000);
+$slider_mheight: rem-calc(600);
+$slider_sheight: rem-calc(350);
+
+#home-header {
+	height: $slider_height;
+	overflow: hidden;
+}
+
+.loader {
+	@extend %full-height;
+}
+
+#main-slider {
+	@extend %full-height;
+	@extend .rel;
+	> nav {
+		@extend %full-height;
+		figure {
+			@extend %full-height;
+		}
+		a {
+			@extend %full-height;
+			z-index: 99;
+			&:hover {
+				background-color: rgba($white, .6);
+				span {
+					@include translateX(rem-calc(10));
+				}
+			}
+		}
+	}
+	h5 {
+		width: rem-calc(102);
+		margin-top: 5rem;
+		line-height: 1.2;
+		margin-right: rem-calc(100);
+		@extend %transition;
+
+		span {
+			@extend %transition;
+			margin-top: rem-calc(14);
+		}
+	}
+}
+
+.slider-pager {
+	z-index: 999;
+	right: rem-calc(10);
+	top: rem-calc(230);
+
+	span {
+		cursor: pointer;
+		display: block;
+		width: rem-calc(12);
+		height: rem-calc(12);
+		background-color: transparent;
+		border: 2px solid $black;
+		margin-bottom: rem-calc(10);
+		border-radius: 100%;
+
+		&.cycle-pager-active {
+			background-color: $black;
+		}
+	}
+}
+
+@media #{$small-only} {
+	#home-header {
+		height: $slider_sheight;
+	}
+}
+@media #{$medium-only} {
+	#home-header {
+		height: $slider_mheight;
+	}
+}
+@media #{$xlarge-up} {
+	#home-header {
+		height: $slider_xheight;
+	}
+}

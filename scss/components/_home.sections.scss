@@ -1,0 +1,105 @@
+//Design é semente
+.icon-right {
+	@extend %transition;
+}
+
+%hove-section {
+	&:hover {
+		.icon-right {
+			@include translateX(10px);
+		}
+	}
+}
+
+#design-weed {
+	figure {
+		height: rem-calc(510);
+	}
+	figcaption {
+		bottom: rem-calc(40);
+		left: 0;
+	}
+	article {
+		height: rem-calc(324);
+	}
+	.d-table-cell {
+		padding: rem-calc(0 80);
+	}
+	.mask {
+		@extend %full-height;
+		opacity: .6;
+	}
+	@extend %hove-section;
+}
+.bg-detail {
+	bottom: -2px;
+	left: 0;
+	background-image: url("images/bg-triangulos.png");
+	background-repeat: repeat-x;
+	background-position: bottom bottom;
+	height: rem-calc(15);
+}
+
+//Sobre, loja
+#about-smart {
+	height: rem-calc(834);
+	.inner-section {
+		height: 50%;
+	}
+	.mask {
+		left: 0; top: 0;
+		z-index: 0;
+		@extend %full-height;
+		&:hover {
+			opacity: .6;
+		}
+	}
+	.creator h5 {
+		margin-top: rem-calc(100);
+		margin-left: 30%;
+		@extend .rel;
+		z-index: 9;
+		@extend %hove-section;
+	}
+	.link-prd h5 {
+		width: rem-calc(102);
+		margin-right: rem-calc(60);
+		margin-top: rem-calc(200);
+		@extend .rel;
+		z-index: 9;
+		.d-block {
+			color: #8f8f8f;
+		}
+	}
+}
+
+//newsletter
+#newsletter {
+	height: rem-calc(338);
+	background-color: #c5af7c;
+	background-image: linear-gradient(-74deg, rgba(29, 29, 30, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.button-glass {
+	@include button($bg: transparent);
+	color: $black;
+	border: 2px solid $black;
+	border-radius: 6px;
+	@extend %transition;
+
+	&:hover {
+		color: $gold;
+		background-color: $black;
+	}
+}
+@media #{$small-only} {
+	#newsletter {
+		height: rem-calc(438);
+	}
+}
+
+@media #{$medium-only} {
+	#newsletter {
+		height: rem-calc(438);
+	}
+}

@@ -1,0 +1,6 @@
+%transition {
+	@include transition(all .3s linear);
+}
+%full-height {
+	height: 100%;
+}

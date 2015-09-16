@@ -1,4 +1,5 @@
 @import "compass";
+@import "fonts";
 @import "settings";
 //@import "foundation";
 
@@ -39,3 +40,18 @@
    "foundation/components/type",
 //   "foundation/components/offcanvas",
    "foundation/components/visibility";
+
+//Bases
+@import "bases/placeholders";
+@import "bases/typography";
+@import "bases/selectors";
+@import "bases/containers";
+
+//Components
+@import "components/menu.top";
+@import "components/home.slider";
+@import "components/home.menu";
+@import "components/home.awards";
+@import "components/home.sections";
+@import "components/footer";
+

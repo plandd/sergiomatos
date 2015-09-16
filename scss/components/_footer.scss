@@ -1,0 +1,26 @@
+.footer-menu {
+	a {
+		color: #525252;
+		@extend .text-up;
+		@extend .regular-bold;
+		font-size: rem-calc(14);
+		&:hover {
+			color: $black;
+		}
+	}
+}
+
+#footer {
+	p {
+		font-size: rem-calc(13);
+		@extend .regular-bold;
+		@extend .no-margin;
+		color: #525252;
+	}
+}
+
+@media #{$small-only} {
+	#footer ul {
+		display: none;
+	}
+}

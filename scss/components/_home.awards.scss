@@ -1,0 +1,40 @@
+#awards {
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+	height: rem-calc(246);
+	width: rem-calc(1000);
+	padding: rem-calc(30 100);
+	background-color: #4b4b4b;
+	background-image: linear-gradient(38deg, rgba(29, 29, 30, 0.01) 0%, rgba(255, 255, 255, 0.01) 100%);
+	@include translateY(100%);
+	&.show {
+		@include translateY(0);
+	}
+
+	figure {
+		margin-left: rem-calc(8);
+		&:first-child {
+			margin-left: 0;
+		}
+		&:hover {
+			@extend .less-opacity;
+		}
+	}
+}
+
+#awards-mo {
+	padding: rem-calc(20);
+	background-color: #4b4b4b;
+	@include background-image(linear-gradient(38deg, rgba(29, 29, 30, 0.01) 0%, rgba(255, 255, 255, 0.01) 100%));
+	
+	figure {
+		@extend .text-center;
+		@extend .small-12;
+		@extend .left;
+	}
+
+	img {
+		@extend .d-iblock;
+	}
+}
