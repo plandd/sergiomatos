@@ -44,3 +44,7 @@ var planddApp = {};
     });
 })();
 
+(function() {
+    $('.zoom-thumb').zoom();
+})();
+

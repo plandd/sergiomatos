@@ -8,7 +8,7 @@
 	padding: rem-calc(0 60);
 	@extend %transition;
 
-	&.hide-canvas {
+	&.hide-canvas:not(.inner-page) {
 		@include translateY(-100%);
 	}
 }

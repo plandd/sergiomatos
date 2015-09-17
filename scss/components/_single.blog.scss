@@ -1,0 +1,48 @@
+.fea-blog {
+	//width: rem-calc(600);
+	height: rem-calc(760);
+	@include filter(grayscale(100%));
+	z-index: 0;
+}
+.fea2-blog {
+	//width: rem-calc(600);
+	height: rem-calc(420);
+	right: 0;
+}
+#post-header {
+	.mask-header {
+		z-index: 9;
+	}
+}
+.post-blockquote {
+	height: rem-calc(188);
+	right: 0;
+	top: rem-calc(-188);
+	padding: rem-calc(0 40);
+}
+
+@media #{$large-up} {
+	#post-header {
+		.share-prod {
+			@include translateY(rem-calc(10));
+		}
+	}
+}
+
+@media #{$small-only} {
+	.fea-blog {
+		height: rem-calc(300);
+	}
+	.post-blockquote {
+		display: none;
+	}
+}
+
+@media #{$medium-only} {
+	.fea-blog {
+		height: rem-calc(500);
+	}
+	.post-blockquote {
+		display: none;
+	}
+}

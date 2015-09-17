@@ -7,12 +7,12 @@
  @import
 //   "foundation/components/accordion",
 //   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
+   "foundation/components/block-grid",
 //   "foundation/components/breadcrumbs",
 //   "foundation/components/button-groups",
    "foundation/components/buttons",
 //   "foundation/components/clearing",
-//   "foundation/components/dropdown",
+   "foundation/components/dropdown",
 //   "foundation/components/dropdown-buttons",
    "foundation/components/flex-video",
    "foundation/components/forms",
@@ -53,5 +53,8 @@
 @import "components/home.menu";
 @import "components/home.awards";
 @import "components/home.sections";
+@import "components/single.estudio";
+@import "components/single.loja";
+@import "components/single.blog";
 @import "components/footer";
 

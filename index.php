@@ -1,56 +1,16 @@
-<!doctype html>
-<html class="no-js" lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sergio Matos</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  </head>
-  <body>
-
-    <nav id="top-menu" class="small-12 d-table hide-canvas">
-      <div class="small-12 d-table-cell">
-        <h1 class="left no-margin logo-top">
-          <a href="#" title="Página principal"><img src="images/logo-white.png" alt=""></a>
-        </h1>
-
-        <h1 class="right show-offmenu">
-          <a href="#" class="icon-menu d-block no-margin"></a>
-        </h1>
-
-        <h1 class="right translate-top">
-          <a href="#" class="icon-transw d-block no-margin"></a>
-        </h1>
-      </div>
-    </nav>
-
-    <nav id="menu-offcanvas" class="small-12 d-table">
-      <div class="small-12 d-table-cell">
-        <div class="row">
-          <header class="small-12 columns text-right show-offmenu">
-            <a href="#" class="d-iblock icon-close"></a>
-          </header>
-          <nav class="small-12 left text-center">
-            <ul class="no-bullet small-12 d-iblock">
-              <li><a href="#">Estúdio</a></li>
-              <li><a href="#">Produtos</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Loja</a></li>
-              <li><a href="#">Contato</a></li>
-              <li><a href="#" class="icon-facebookw d-iblock"></a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </nav>
-    
+<?php
+  //get_header();
+  include "header.php";
+?>
     <header id="home-header" class="small-12 left rel bg-ocean">
-    <figure class="loader small-12 abs d-table">
-          <div class="d-table-cell small-12 text-center">
-            <img src="images/loading.gif" alt="">
-          </div>
-        </figure>
+      <!-- loader -->
+      <figure class="loader small-12 abs d-table">
+        <div class="d-table-cell small-12 text-center">
+          <img src="images/loading.gif" alt="">
+        </div>
+      </figure>
+      
+      <!-- logo -->
       <h1 class="logo-home abs"><a href="#"><img src="images/logo.png" alt=""></a></h1>
 
       <!-- slider -->
@@ -127,8 +87,10 @@
         </nav>
       </section>
     </header>
+    <!-- premios mobile -->
     <section id="awards-mo" class="small-12 left show-for-medium-down"></section>
-
+    
+    <!-- post -->
     <section id="design-weed" class="small-12 medium-6 large-5 left bg-salmon">
       <figure class="small-12 left rel">
         <a href="#" class="d-block small-12 abs mask" title="" data-thumb="media/blog1.jpg"></a>
@@ -147,7 +109,8 @@
         </div>
       </article>
     </section>
-
+    
+    <!-- sobre / loja -->
     <section id="about-smart" class="small-12 medium-6 large-7 left">
       <div class="small-12 left inner-section rel">
         <header class="small-12 left creator">
@@ -173,7 +136,8 @@
         <a href="#" class="small-12 abs mask show-onload" title="" data-thumb="media/produto.jpg"></a>
       </div>
     </section>
-
+    
+    <!-- newsletter -->
     <section id="newsletter" class="small-12 left bg-gold d-table">
       <div class="d-table-cell small-12">
         <div class="row">
@@ -190,41 +154,7 @@
       </div>
     </section>
 
-    <footer id="footer" class="small-12 left section-60">
-      <div class="row">
-
-        <div class="small-12 medium-6 columns">
-          <h1 class="divide-30"><a href="#" title="Página principal">
-            <img src="images/logo-footer.png" alt="">
-          </a></h1>
-          <h1 class="small-12 left no-margin"><a href="#" title="Página principal">
-            <img src="images/partner.png" alt="">
-          </a></h1>
-        </div>
-
-        <div class="small-12 medium-6 columns">
-          <nav class="small-12 left text-right">
-            <ul class="footer-menu inline-list d-iblock">
-              <li><a href="#">Estúdio</a></li>
-              <li><a href="#">Produtos</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Loja</a></li>
-              <li><a href="#">Contato</a></li>
-            </ul>
-
-            <p>TIM +55 83 9920-3166</p>
-            <p>OI +55 83 8891-6506</p>
-            <p>Claro +55 83 9143-4956</p>
-            <p>Estúdio: +55 83 3066-4390</p>
-            <p>e-mail: sergio.dostum@hotmail.com</p>
-            <p>R. Dom Pedro II, 941 - Prata, Campina Grande - PB, 58400-062</p>
-          </nav>
-        </div>
-
-      </div>
-    </footer>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?ver=1.0.4"></script>
-    <script src="scripts.js"></script>
-  </body>
-</html>
+<?php
+  //get_footer();
+  include "footer.php";
+?>

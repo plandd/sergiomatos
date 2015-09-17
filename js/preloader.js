@@ -94,7 +94,7 @@
       zIndex: 999999
     })
     .addClass('bg-info')
-    .appendTo('#main-slider'); // aqui adiciona a barra
+    .appendTo('body'); // aqui adiciona a barra
 
     if(jpreOptions.showPercentage) {
       jPer = $('<div></div>')
@@ -265,6 +265,7 @@ $(document).ready(function() {
         closeBtnText: ''
     }, function() {
         $('#jpreBar,.loader').fadeOut('fast');
+        $(".show-onload").addClass('show');
         $(".show-onload").addClass('show');
     });
 });
