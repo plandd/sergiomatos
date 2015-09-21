@@ -20,6 +20,19 @@
 	top: rem-calc(-188);
 	padding: rem-calc(0 40);
 }
+.thumb-captions {
+	top: rem-calc(440);
+	right: 0;
+}
+.post-excerpt {
+	min-height: rem-calc(420);
+}
+.post-options {
+	padding: rem-calc(20 0);
+	.icon-right {
+		margin-top: rem-calc(5);
+	}
+}
 
 @media #{$large-up} {
 	#post-header {

@@ -1,8 +1,9 @@
 <?php
-  //get_header();
-  include "header.php";
+  get_header();
+  $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
+  $th = (isset($thumb)) ? $thumb[0] : '';
+  global $redux_demo;
 ?>
-  
   <header id="post-header" class="small-12 left rel">
     <div class="row rel">
       
@@ -12,7 +13,7 @@
       <div class="d-table-cell small-12">
         <div class="row">
           <h1 class="small-10 columns text-up white header-black lh-1 no-margin">
-            A semente do design germina</h1>
+           <?php the_title(); ?></h1>
           <h5 class="regular text-up share-prod small-10 columns end text-right show-for-large-up">
             <a href="#" class="right"><i class="d-iblock left icon-share"></i><span class="left">Compartilhe</span></a>
           </h5>
@@ -20,33 +21,49 @@
       </div>
     </div>
 
-    <figure class="fea-blog small-12 medium-6 left show-onload" data-thumb="media/blog1.jpg"></figure>
+    <figure class="fea-blog small-12 medium-6 left show-onload" data-thumb="<?php echo $th; ?>"></figure>
   </header>
 
   <section id="post-content" class="small-12 left rel">
-
+<?php
+if($blockquote = get_field('post_blockquote')):
+?>
     <div class="post-blockquote abs d-table small-6">
       <div class="small-12 d-table-cell">
-
+        
         <span class="small-12 left d-iblock text-center"><span class="d-iblock icon-rquote"></span></span>
         <div class="divide-10"></div>
-        <h6 class="text-up no-margin">Aprendi mais que ensinei. Nos silêncios, nos ritos cotidianos, nas escolhas, na trama das fibras por entre os dedos e nos gestos simples que dão verdadeiro sentido à vida.</h6>
+        <h6 class="text-up no-margin"><?php echo $blockquote; ?></h6>
         <div class="divide-10"></div>
         <span class="small-12 left d-iblock text-center"><span class="d-iblock icon-lquote"></span></span>
 
       </div>
     </div>
+<?php endif; ?>
 
-    <figure class="abs small-6 fea2-blog show-for-medium-up show-onload" data-thumb="media/blog2.jpg">
+<?php
+$post_img = get_field('post_imagem');
+$post_img_desc = get_field('post_imagem_desc');
+if($post_img):
+  if($post_img_desc):
+?>
+    <div class="thumb-captions small-6 abs show-for-medium-up">
+      <h6 class="text-up small-10 small-offset-1 left"><?php echo $post_img_desc; ?></h6>
+    </div>
+<?php 
+  endif;
+?>
+    <figure class="abs small-6 fea2-blog show-for-medium-up show-onload" data-thumb="<?php echo $post_img; ?>">
     </figure>
+<?php endif; ?>
     
     <div class="row">
       <article class="small-12 medium-6 columns">
         <div class="divide-30"></div>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eius ad, fugit sed ut, corporis vel amet aliquam repudiandae, harum debitis. Sapiente atque nulla enim consequuntur ad minus! Nesciunt, enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil autem alias, voluptatum accusantium quia deserunt. Dignissimos eos aliquid neque, eligendi pariatur cupiditate laborum similique, sed ab asperiores molestiae expedita officiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis accusantium tempore reprehenderit repellendus totam, vel, aspernatur architecto incidunt commodi quod maiores praesentium cum quos esse suscipit, assumenda consequatur quidem! Recusandae.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime laudantium, incidunt commodi, sapiente mollitia neque repellendus culpa aut similique ipsum veniam recusandae iste. Beatae totam eligendi cumque velit, dicta debitis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque adipisci, quidem unde. Excepturi quaerat saepe aliquid explicabo cum pariatur iusto laudantium! Cumque assumenda at delectus sit provident sint, magnam tempora!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, iure facere, hic ratione perferendis debitis reprehenderit officia maxime eligendi, minima, corporis rerum quae aut. In consequatur, id tempora ipsum a? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui delectus sit rerum placeat earum laudantium ab quaerat nesciunt at saepe amet animi iusto aspernatur, laborum voluptates nobis eligendi modi, libero.</p>
+<?php
+  echo get_field('post_texto');
+?>
 
         <div class="divide-30"></div>
       </article>
@@ -63,9 +80,18 @@
           data-cycle-next=".next-prd"
           data-cycle-prev=".prev-prd"
         >
-          <figure class="small-12 left" data-thumb="media/slprd1.jpg"></figure>
-          <figure class="small-12 left" data-thumb="media/slide1.jpg"></figure>
-          <figure class="small-12 left" data-thumb="media/slide2.jpg"></figure>
+<?php
+$galeria = get_field('post_galeria');
+$descriptions = array();
+if($galeria):
+  foreach ($galeria as $foto):
+    $descriptions[] = ($foto['description'] == "") ? $foto['caption'] : $foto['description'];
+?>
+          <figure class="small-12 left" data-thumb="<?php echo $foto['sizes']['large']; ?>"></figure>
+<?php
+  endforeach;
+endif;
+?>
         </nav>
 
         <nav class="nav-prod-gal rel small-12 medium-6 large-5 columns bg-ocean cycle-slideshow"
@@ -75,17 +101,13 @@
           data-cycle-next=".next-prd"
           data-cycle-prev=".prev-prd"
         >
+<?php
+foreach ($descriptions as $caption):
+?>
           <article class="small-12 left">
-            <h6 class="text-up">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique consectetur iusto molestias vel nostrum, aliquam, ipsum minus illum, magnam tempora ipsam, earum vitae sapiente neque unde cum quas perspiciatis nam.</h6>
+            <h6 class="text-up"><?php echo $caption; ?></h6>
           </article>
-
-          <article class="small-12 left">
-            <h6 class="text-up">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat soluta ducimus rem accusamus laudantium tenetur laborum tempore quisquam, accusantium recusandae reprehenderit magni sit ullam qui veniam perspiciatis asperiores iste modi.</h6>
-          </article>
-
-          <article class="small-12 left">
-            <h6 class="text-up">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa rem non ea a ipsum officia animi, laboriosam ducimus blanditiis nulla, ipsa tempora recusandae ad quas voluptatibus id dolor ex quidem?</h6>
-          </article>
+<?php endforeach; ?>
 
           <div class="nav-slide-prod small-12 abs">
             <a href="#" class="right d-block icon-right next-prd"></a>
@@ -118,6 +140,5 @@
   </section>
 
 <?php
-  //get_footer();
-  include "footer.php";
+  get_footer();
 ?>
