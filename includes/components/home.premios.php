@@ -23,3 +23,5 @@ if(!empty($sliders)):
   </nav>
 </section>
 <?php endif; ?>
+</header>
+<section id="awards-mo" class="small-12 left show-for-medium-down"></section>

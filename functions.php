@@ -1,7 +1,7 @@
 <?php
 define('THEME_VERSION', '1.0.3');
 define('THEME_ICON', get_stylesheet_directory_uri() . '/images/icon.png');
-
+error_reporting(E_ERROR | E_PARSE);
 /**
 * Métodos úteis para snippets Wordpress
 * @package Wordpress
@@ -35,6 +35,9 @@ class PlanDDUtils
 add_action('init',array(
   PlanDDUtils::registerInitPage('Estúdio','O criador e seu estúdio',0,'template.estudio.php')
 ));
+add_action('init',array(
+  PlanDDUtils::registerInitPage('Contato','',0,'template.contato.php')
+));
 
 /**
 * Configure funções para campos personalizados da aplicação
@@ -62,7 +65,7 @@ function plandd_acf_dir( $dir ) {
  * (custom meta post)
  */
 include_once( get_stylesheet_directory() . '/includes/acf-pro/acf.php' );
-//define( 'ACF_LITE' , true );
+define( 'ACF_LITE' , true );
 //include_once( get_stylesheet_directory() . '/includes/acf/preconfig.php' );
 
 /*if( function_exists('acf_add_options_page') ) {

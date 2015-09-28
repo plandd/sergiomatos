@@ -10,6 +10,7 @@
   $sergio_foto_flutuante_2 = get_field('sergio_foto_flutuante_2');
   $sergio_foto_flutuante_3 = get_field('sergio_foto_flutuante_3');
   $membros = get_field('sergio_membros');
+  global $post;
 ?>
 
   <header id="estudio-header" class="small-12 left rel">
@@ -18,11 +19,9 @@
       <div class="d-table-cell small-12">
         <div class="row">
           <h1 class="small-12 medium-6 large-5 columns text-up white header-black lh-1 no-margin">
-            Um
-            <span class="d-block">estúdio</span>
-            <span class="d-block">de todos</span>
+            <?php echo get_field('sobre_cabecalho',$post->ID); ?>
           </h1>
-          <h5 class="text-up white left column lh-1">Desde<span class="d-block">2011</span></h5>
+          <h5 class="text-up white left column lh-1"><?php echo get_field('sobre_subcabecalho',$post->ID); ?></h5>
         </div>
       </div>
     </div>
@@ -61,7 +60,7 @@
   if(get_field('sergio_dev_produtos')):
 ?>
         <div class="small-12 medium-6 large-5 columns">
-          <header class="divide-30"><h4 class="text-up">Desenvolvimento de produto</h4></header>
+          <header class="divide-30"><h4 class="text-up"><?php echo get_field('sergio_dev_produtos_cabecalho'); ?></h4></header>
           <?php echo get_field('sergio_dev_produtos'); ?>
         </div>
 <?php
@@ -70,7 +69,7 @@
 ?>
 
         <div class="small-12 medium-6 large-7 columns">
-          <header class="divide-30"><h4 class="text-up">Cenografia</h4></header>
+          <header class="divide-30"><h4 class="text-up"><?php echo get_field('sergio_cenografia_cabecalho'); ?></h4></header>
           <?php echo get_field('sergio_cenografia'); ?>
         </div>
 <?php endif; ?>
@@ -90,7 +89,7 @@
   if(get_field('sergio_consultoria')):
 ?>
         <div class="small-12 large-7 columns">
-          <header class="divide-30"><h4 class="text-up">consultoria para empresas e grupos de artesanatos</h4></header>
+          <header class="divide-30"><h4 class="text-up"><?php echo get_field('sergio_consultoria_cabecalho'); ?></h4></header>
           <?php echo get_field('sergio_consultoria'); ?>
         </div>
 <?php endif; ?>
@@ -109,8 +108,7 @@
     <div class="row">
       <header class="small-12 large-4 large-offset-5 columns">
         <h2 class="text-up text-under white no-margin">
-          Equipe
-          <span class="d-block">de apoio</span>
+          <?php echo get_field('sergio_membros_cabecalho'); ?>
         </h2>
         <div class="divide-30"></div>
       </header>

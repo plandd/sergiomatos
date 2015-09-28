@@ -235,6 +235,34 @@
         )
     ) );
 
+    // -> Painel
+    Redux::setSection( $opt_name, array(
+        'title'  => __( 'Newsletter', 'redux-framework-demo' ),
+        'id'     => 'newsletter',
+        'desc'   => __( '', 'redux-framework-demo' ),
+        'icon'   => 'el el-envelope', 
+        'fields' => array(
+          array(
+                'id'       => 'newsletter-header',
+                'type'     => 'text',
+                'title'    => __( 'Cabeçalho', 'redux-framework-demo' ),
+                'default'  => 'INSCREVA-SE EM NOSSA LISTA DE CARTINHAS',
+            ),
+          array(
+                'id'       => 'newsletter-desc',
+                'type'     => 'textarea',
+                'title'    => __( 'Descrição', 'redux-framework-demo' ),
+                'default'  => 'Estamos sempre produzindo textos reflexivos e compartilhando nossas ideias sobre como o design pode mudar o mundo. Enviamos a cada duas semanas uma cartinha para os nossos seguidores, cheia de referências e conteúdos interessantes, além de ofertas exclusivas para os nossos produtos.',
+            ),
+          array(
+                'id'       => 'newsletter-btn',
+                'type'     => 'text',
+                'title'    => __( 'Texto do botão', 'redux-framework-demo' ),
+                'default'  => 'Quero receber',
+            ),
+        )
+    ) );
+
     /**Redux::setSection( $opt_name, array(
         'title'      => __( 'Text', 'redux-framework-demo' ),
         'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/text/" target="_blank">//docs.reduxframework.com/core/fields/text/</a>',

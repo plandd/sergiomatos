@@ -38,10 +38,12 @@ global $redux_demo;
   </head>
   <body>
 
-    <nav id="top-menu" class="small-12 d-table hide-canvas inner-page">
+    <nav id="top-menu" class="small-12 d-table hide-canvas <?php  if(!is_home()) echo "inner-page"; ?>">
       <div class="small-12 d-table-cell">
         <h1 class="left no-margin logo-top">
-          <a href="#" title="Página principal"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-white.png" alt=""></a>
+          <a href="<?php echo home_url(); ?>" title="Página principal">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-white.png" alt="">
+          </a>
         </h1>
 
         <h1 class="right show-offmenu">
@@ -49,7 +51,7 @@ global $redux_demo;
         </h1>
 
         <h1 class="right translate-top">
-          <a href="#" class="icon-transw d-block no-margin"></a>
+          <a href="<?php home_url(); ?>/en" class="icon-transw d-block no-margin"></a>
         </h1>
       </div>
     </nav>
@@ -84,6 +86,15 @@ global $redux_demo;
                 wp_nav_menu($defaults);
                 if($redux_demo['fanpage-url'])
                   printf('<li><a href="%s" target="_blank" class="icon-facebookw d-iblock"></a></li>',$redux_demo['fanpage-url']);
+                
+                $args = array( 'posts_per_page' => 1, 'orderby' => 'date', 'post_type' => 'produtos' );
+                $posts = get_posts( $args );
+                if($posts):
+                  foreach ($posts as $post): setup_postdata( $post );
+                    global $post;
+                    printf('<li><a href="%s" title="Produtos">Produtos</a></li>', get_permalink($post->ID));
+                  endforeach;
+                endif;
               ?>
             </ul>
           </nav>

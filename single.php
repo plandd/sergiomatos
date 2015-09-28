@@ -15,7 +15,7 @@
           <h1 class="small-10 columns text-up white header-black lh-1 no-margin">
            <?php the_title(); ?></h1>
           <h5 class="regular text-up share-prod small-10 columns end text-right show-for-large-up">
-            <a href="#" class="right"><i class="d-iblock left icon-share"></i><span class="left">Compartilhe</span></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php get_permalink($post->ID); ?>" target="_blank"><i class="d-iblock left icon-share"></i><span class="left">Compartilhe</span></a>
           </h5>
         </div>
       </div>
@@ -26,14 +26,15 @@
 
   <section id="post-content" class="small-12 left rel">
 <?php
-if($blockquote = get_field('post_blockquote')):
+$blockquote = get_field('post_blockquote',$post->ID);
+if($blockquote):
 ?>
     <div class="post-blockquote abs d-table small-6">
       <div class="small-12 d-table-cell">
         
         <span class="small-12 left d-iblock text-center"><span class="d-iblock icon-rquote"></span></span>
         <div class="divide-10"></div>
-        <h6 class="text-up no-margin"><?php echo $blockquote; ?></h6>
+        <h6 class="text-up no-margin text-center"><?php echo $blockquote; ?></h6>
         <div class="divide-10"></div>
         <span class="small-12 left d-iblock text-center"><span class="d-iblock icon-lquote"></span></span>
 

@@ -35,7 +35,15 @@ global $redux_demo;
     'depth'           => 0,
     'walker'          => '',
   );
+  
   wp_nav_menu($defaults);
+  $args = array( 'posts_per_page' => 1, 'orderby' => 'date', 'post_type' => 'produtos' );
+  $posts = get_posts( $args );
+  if($posts):
+    foreach ($posts as $post): setup_postdata( $post );
+      printf('<li><a href="%s" title="Produtos">Produtos</a></li>',get_permalink($post->ID ));
+    endforeach;
+  endif;
 ?>
             </ul>
 <?php
