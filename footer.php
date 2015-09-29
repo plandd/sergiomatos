@@ -4,7 +4,7 @@ global $redux_demo;
     <footer id="footer" class="small-12 left section-60">
       <div class="row">
 
-        <div class="small-12 medium-6 columns">
+        <div class="small-12 medium-4 columns">
           <h1 class="divide-30"><a href="<?php echo home_url(); ?>" title="Página principal">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-footer.png" alt="">
           </a></h1>
@@ -13,7 +13,7 @@ global $redux_demo;
           </a></h1>
         </div>
 
-        <div class="small-12 medium-6 columns">
+        <div class="small-12 medium-8 columns">
           <nav class="small-12 left text-right">
             <ul class="footer-menu inline-list d-iblock">
 <?php

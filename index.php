@@ -44,6 +44,8 @@ require_once (dirname(__FILE__) . '/includes/components/home.slider.php');
                 global $post;
                 printf('<li><a href="%s" title="Produtos">Produtos</a></li>', get_permalink($post->ID));
               endforeach;
+              wp_reset_postdata();
+              wp_reset_query();
             endif;
 
             if($redux_demo['fanpage-url'])

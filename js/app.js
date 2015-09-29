@@ -2,6 +2,10 @@
 // Documentation can be found at: http://foundation.zurb.com/docs
 $(document).foundation();
 
+$('.zoom-thumb').zoom({
+    on: 'grab'
+});
+
 $.fn.getDataThumb = function(options) {
     options = $.extend({
         bgClass: 'bg-cover'
@@ -42,9 +46,5 @@ var planddApp = {};
         rewindNav: false,
         rewindSpeed: 300
     });
-})();
-
-(function() {
-    $('.zoom-thumb').zoom();
 })();
 

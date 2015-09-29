@@ -23,6 +23,7 @@ if ( ! empty( $terms ) && ! is_wp_error( $terms ) ):
         )
     );
     $my_query = new WP_Query( $args );
+    
 ?>
           <li class="<?php echo $term->name; ?>">
             <a data-dropdown="drop-<?php echo $term->term_id; ?>" aria-controls="drop-<?php echo $term->term_id; ?>" aria-expanded="false"><?php echo $term->name; ?> <span class="right icon-down d-iblock"></span></a>

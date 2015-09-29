@@ -130,8 +130,8 @@ add_action( 'wp_enqueue_scripts', 'plandd_scripts' );
 add_theme_support('post-thumbnails');    
 set_post_thumbnail_size( 242, 220, true );
 if (function_exists('add_image_size')) {
-    add_image_size('estrutura', 242, 220, true);
-    add_image_size('tratamento', 780, 320, true);
+  add_image_size('estrutura', 242, 220, true);
+  add_image_size('tratamento', 780, 320, true);
 }
 
 /**

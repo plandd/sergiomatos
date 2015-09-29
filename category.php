@@ -1,8 +1,6 @@
 <?php
-  //get_header();
-  include "header.php";
+  get_header();
 ?>
-  
   <nav id="post-list" class="small-12 left">
 <?php
   if (have_posts()) : while (have_posts()) : the_post();
@@ -104,8 +102,6 @@ if($post_img):
       ) );
     ?>
   </footer>
-
 <?php
-  //get_footer();
-  include "footer.php";
+  get_footer();
 ?>

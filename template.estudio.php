@@ -49,7 +49,7 @@
 
         <header class="small-12 left show-for-small-only"><h5 class="text-up">Sobre <span class="d-block">Sérgio</span></h5></header>
 <?php
-  echo get_field('sobre_sergio');
+  echo get_field('sobre_sergio',$post->ID);
 ?>
         <div class="divide-40"></div>
       </article>

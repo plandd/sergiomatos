@@ -85,14 +85,15 @@ global $redux_demo;
                 );
                 wp_nav_menu($defaults);
                 
-                $args = array( 'posts_per_page' => 1, 'orderby' => 'date', 'post_type' => 'produtos' );
+                /*$args = array( 'posts_per_page' => 1, 'orderby' => 'date', 'post_type' => 'produtos' );
                 $posts = get_posts( $args );
                 if($posts):
                   foreach ($posts as $post): setup_postdata( $post );
                     global $post;
                     printf('<li><a href="%s" title="Produtos">Produtos</a></li>', get_permalink($post->ID));
                   endforeach;
-                endif;
+                  wp_reset_query();
+                endif;*/
 
                 if($redux_demo['fanpage-url'])
                   printf('<li><a href="%s" target="_blank" class="icon-facebookw d-iblock"></a></li>',$redux_demo['fanpage-url']);
