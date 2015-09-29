@@ -47,10 +47,18 @@ require_once (dirname(__FILE__) . '/includes/components/home.slider.php');
               wp_reset_postdata();
               wp_reset_query();
             endif;
+            ?>
+            
+            <li>
+              <a href="<?php translateSite(); ?>" title="Translate site">
+                <span class="d-block icon-google_translate_copyrighted"></span>
+                TRANSLATE
+              </a>
+            </li>
 
+            <?php
             if($redux_demo['fanpage-url'])
               printf('<li><a href="%s" target="_blank" class="icon-facebookw d-iblock"></a></li>',$redux_demo['fanpage-url']);
-            
         ?>
 		</ul>
 	</nav>

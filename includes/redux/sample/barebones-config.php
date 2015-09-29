@@ -120,6 +120,22 @@
         )
     );
 
+    $args['share_icons'][] = array(
+        'url'   => 'https://www.facebook.com/planndd?fref=ts',
+        'title' => 'PlanDD no Facebook',
+        'icon'  => 'el el-facebook'
+    );
+    $args['share_icons'][] = array(
+        'url'   => 'https://twitter.com/plan_dd',
+        'title' => 'Seguir PlanDD no Twitter',
+        'icon'  => 'el el-twitter'
+    );
+    $args['share_icons'][] = array(
+        'url'   => 'https://www.linkedin.com/company/plandd.cc?trk=top_nav_home',
+        'title' => 'Encontre-nos no Linkedin',
+        'icon'  => 'el el-linkedin'
+    );
+
     Redux::setArgs( $opt_name, $args );
     /*
      * ---> END ARGUMENTS

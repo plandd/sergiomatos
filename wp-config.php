@@ -61,7 +61,6 @@ define('NONCE_SALT',       '@,H;{#~0qtpXDs19`7ClYx^?N-C-2iRvdDa=>+-9m8GpF9_s%3p{
  */
 $table_prefix  = 'wp_';
 
-
 /**
  * Para desenvolvedores: Modo debugging WordPress.
  *
@@ -72,7 +71,13 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', true);
 
 /* Isto ?? tudo, pode parar de editar! :) */
-//define('WP_ALLOW_REPAIR', true);
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', false);
+define('DOMAIN_CURRENT_SITE', 'sergiojmatos.com');
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
+
 
 /** Caminho absoluto para o diret??rio WordPress. */
 if ( !defined('ABSPATH') )

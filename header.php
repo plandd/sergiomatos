@@ -51,7 +51,7 @@ global $redux_demo;
         </h1>
 
         <h1 class="right translate-top">
-          <a href="<?php home_url(); ?>/en" class="icon-transw d-block no-margin"></a>
+          <a href="<?php translateSite(); ?>" class="icon-transw d-block no-margin"></a>
         </h1>
       </div>
     </nav>

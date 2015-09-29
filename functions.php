@@ -66,7 +66,7 @@ function plandd_acf_dir( $dir ) {
  * (custom meta post)
  */
 include_once( get_stylesheet_directory() . '/includes/acf-pro/acf.php' );
-//define( 'ACF_LITE' , true );
+define( 'ACF_LITE' , true );
 //include_once( get_stylesheet_directory() . '/includes/acf/preconfig.php' );
 
 /*if( function_exists('acf_add_options_page') ) {
@@ -194,6 +194,12 @@ function loja_init() {
 	));
 }
 add_action('init', 'loja_init');
+
+//verificar id do site
+function translateSite() {
+  $site_url = (get_current_blog_id() == 1) ? 'http://sergiojmatos.com/en' : 'http://sergiojmatos.com/';
+  echo $site_url;
+} 
 
 //Opções para o tema
 require_once (dirname(__FILE__) . '/includes/redux/redux-framework.php');
