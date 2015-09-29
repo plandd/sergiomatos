@@ -12,7 +12,6 @@
   $membros = get_field('sergio_membros');
   global $post;
 ?>
-
   <header id="estudio-header" class="small-12 left rel">
     
     <div class="mask-header small-12 abs d-table">

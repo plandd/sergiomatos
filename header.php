@@ -84,8 +84,6 @@ global $redux_demo;
                   'walker'          => '',
                 );
                 wp_nav_menu($defaults);
-                if($redux_demo['fanpage-url'])
-                  printf('<li><a href="%s" target="_blank" class="icon-facebookw d-iblock"></a></li>',$redux_demo['fanpage-url']);
                 
                 $args = array( 'posts_per_page' => 1, 'orderby' => 'date', 'post_type' => 'produtos' );
                 $posts = get_posts( $args );
@@ -95,6 +93,9 @@ global $redux_demo;
                     printf('<li><a href="%s" title="Produtos">Produtos</a></li>', get_permalink($post->ID));
                   endforeach;
                 endif;
+
+                if($redux_demo['fanpage-url'])
+                  printf('<li><a href="%s" target="_blank" class="icon-facebookw d-iblock"></a></li>',$redux_demo['fanpage-url']);
               ?>
             </ul>
           </nav>

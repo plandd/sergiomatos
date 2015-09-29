@@ -9,7 +9,7 @@ $th = (isset($thumb)) ? $thumb[0] : '';
     <header class="small-12 left creator">
       <h5 class="regular text-up left regular-bold">
         <a href="<?php echo get_page_link( $page->ID ); ?>" title="Estúdio">
-          <?php echo get_field('sobre_chamada',$post->ID); ?>
+          <?php echo get_field('sobre_chamada',$page->ID); ?>
         </a>
       </h5>
     </header>
