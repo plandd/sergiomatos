@@ -11,6 +11,14 @@
 	}
 }
 
+.home-product {
+	a[data-thumb] {
+		background-size: auto 100% !important;
+		background-repeat: no-repeat !important;
+		background-position: center center;
+	}
+}
+
 #design-weed {
 	figure {
 		height: rem-calc(510);
@@ -28,6 +36,10 @@
 	.mask {
 		@extend %full-height;
 		opacity: .6;
+		&.no-repeat {
+			background-size: auto 100% !important;
+			background-repeat: no-repeat;
+		}
 	}
 	@extend %hove-section;
 }

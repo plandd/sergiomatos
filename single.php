@@ -3,6 +3,7 @@
   $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
   $th = (isset($thumb)) ? $thumb[0] : '';
   global $redux_demo;
+  global $post;
 ?>
   <header id="post-header" class="small-12 left rel">
     <div class="row rel">
@@ -126,7 +127,9 @@ foreach ($descriptions as $caption):
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES * * */
             // Required: on line below, replace text in quotes with your forum shortname
-            var disqus_shortname = 'FORUM SHORTNAME GOES HERE';
+            var disqus_shortname = 'sergiojmatos';
+            var disqus_title = "<?php the_title(); ?>";
+            var disqus_url = "<?php the_permalink(); ?>";
             
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {

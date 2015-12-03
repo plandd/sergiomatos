@@ -18,7 +18,7 @@ if(isset($sliders)):
 ?>
     <figure class="small-12 left" data-thumb="<?php echo $th[0]; ?>">
       <a href="<?php echo $slide['url']; ?>" title="<?php echo $slide['description']; ?>" class="d-block small-12 abs">
-        <h5 class="right text-up regular-bold"><?php echo $slide['title']; ?> <span class="d-block icon-right"></span></h5>
+        <h5 class="text-up regular-bold"><?php echo $slide['title']; ?> <span class="d-block icon-right"></span></h5>
       </a>
     </figure>
 <?php

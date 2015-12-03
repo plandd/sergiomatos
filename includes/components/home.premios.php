@@ -4,7 +4,7 @@ $sliders = $redux_demo['slides-winners'];
 if(!empty($sliders)):
 ?>
 <!-- premios -->
-<section id="awards" class="abs show-for-large-up show-onload">
+<section id="awards" class="abs">
   <header class="small-12 left">
     <h5 class="white text-up divide-20">Prêmios recebidos</h5>
   </header>
@@ -24,4 +24,4 @@ if(!empty($sliders)):
 </section>
 <?php endif; ?>
 </header>
-<section id="awards-mo" class="small-12 left show-for-medium-down"></section>
+<section id="awards-mo" class="small-12 left"></section>

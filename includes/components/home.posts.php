@@ -12,7 +12,9 @@ if($posts):
   <figure class="small-12 left rel">
     <a href="<?php the_permalink(); ?>" class="d-block small-12 abs mask" title="<?php the_title(); ?>" data-thumb="<?php echo $th; ?>"></a>
     <figcaption class="small-12 abs">
-      <h2 class="white text-up text-under lh-1 small-6 small-offset-3 left"><?php the_title(); ?></h2>
+      <h2 class="white text-up text-under lh-1 small-6 small-offset-3 left">
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="white"><?php the_title(); ?></a>
+      </h2>
     </figcaption>
     <div class="bg-detail small-12 abs"></div>
   </figure>

@@ -3,10 +3,12 @@
 	right: 0;
 	z-index: 999;
 	height: rem-calc(246);
-	width: rem-calc(1000);
+	width: rem-calc(1060);
 	padding: rem-calc(30 100);
 	background-color: #4b4b4b;
+	opacity: .7;
 	background-image: linear-gradient(38deg, rgba(29, 29, 30, 0.01) 0%, rgba(255, 255, 255, 0.01) 100%);
+	display: none;
 	@include translateY(100%);
 	&.show {
 		@include translateY(0);

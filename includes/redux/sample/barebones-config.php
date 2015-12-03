@@ -177,6 +177,8 @@
         'desc'   => __( '', 'redux-framework-demo' ),
         'icon'   => 'el el-home',
         'fields' => array(
+            
+            //Redes sociais 
             array(
                 'id'       => 'fanpage-url',
                 'type'     => 'text',
@@ -184,6 +186,35 @@
                 'validate' => 'url',
                 'default'  => 'http://facebook.com',
             ),
+            array(
+                'id'       => 'twitter-url',
+                'type'     => 'text',
+                'title'    => __( 'Twitter', 'redux-framework-demo' ),
+                'validate' => 'url',
+                'default'  => 'http://twitter.com',
+            ),
+            array(
+                'id'       => 'instagram-url',
+                'type'     => 'text',
+                'title'    => __( 'Instagram', 'redux-framework-demo' ),
+                'validate' => 'url',
+                'default'  => 'http://instagram.com',
+            ),
+            array(
+                'id'       => 'youtube-url',
+                'type'     => 'text',
+                'title'    => __( 'Youtube', 'redux-framework-demo' ),
+                'validate' => 'url',
+                'default'  => 'http://youtube.com',
+            ),
+            array(
+                'id'       => 'pinterest-url',
+                'type'     => 'text',
+                'title'    => __( 'Pinterest', 'redux-framework-demo' ),
+                'validate' => 'url',
+                'default'  => 'http://pinterest.com',
+            ),
+
             array(
                 'id'       => 'sergio-email',
                 'type'     => 'text',

@@ -32,11 +32,14 @@ $slider_sheight: rem-calc(350);
 		}
 	}
 	h5 {
-		width: rem-calc(102);
-		margin-top: 5rem;
-		line-height: 1.2;
-		margin-right: rem-calc(100);
-		@extend %transition;
+		width: rem-calc(220);
+		float: none !important;
+		position: absolute;
+		right: 0;
+		bottom: rem-calc(246);
+		background-color: #ccc;
+		padding: rem-calc(40);
+		margin: 0 !important;
 
 		span {
 			@extend %transition;
@@ -69,6 +72,11 @@ $slider_sheight: rem-calc(350);
 @media #{$small-only} {
 	#home-header {
 		height: $slider_sheight;
+	}
+	#main-slider {
+		h5 {
+			bottom: 0;
+		}
 	}
 }
 @media #{$medium-only} {

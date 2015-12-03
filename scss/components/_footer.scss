@@ -11,12 +11,25 @@
 }
 
 #footer {
-	background-color: #f8f8f8;
+	background-color: $white;
 	p {
 		font-size: rem-calc(13);
 		@extend .regular-bold;
 		@extend .no-margin;
 		color: #525252;
+	}
+}
+
+.tels {
+	span {
+		@extend .d-iblock;
+		&:not(:first-child) {
+			&:before {
+				content: "/";
+				display: inline-block;
+				margin: rem-calc(0 5);
+			}
+		}
 	}
 }
 

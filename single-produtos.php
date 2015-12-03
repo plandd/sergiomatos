@@ -6,19 +6,20 @@
   <hedaer id="header-loja" class="divide-40">
     <div class="row">
       <div class="small-12 columns">
-        <ul id="loja-cat" class="small-block-grid-1 medium-block-grid-3 large-block-grid-5">
+        <ul id="loja-cat" class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
 <?php
-$terms = get_terms( 'grupos', 'orderby=count&hide_empty=1&parent=0' );
+$terms = get_terms( 'grupos', 'orderby=count&hide_empty=0&parent=0' );
 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ):
   foreach ($terms as $term):
     
     $args = array(
         'post_type' => 'produtos',
+        'hide_empty' => 0,
         'tax_query' => array(
             array(
                 'taxonomy' => 'grupos',
-                'field' => 'name',
-                'terms' => $term->name
+                'field' => 'slug',
+                'terms' => $term->slug
             )
         )
     );
@@ -89,6 +90,31 @@ if( $produto_img ):
     </div>
   </section>
 
+<?php
+$produto_paleta = get_field('sm_paleta');
+if ($produto_paleta):
+?>
+  <nav id="paleta-cores" class="divide-30">
+    <div class="row">
+      <nav id="color-paleta" class="small-12 columns">
+        <div class="small-12 left">
+          <header class="left">
+            <h6 class="font-bold text-up no-margin">Paleta de cores disponíveis</h6>
+          </header>
+
+          <ul class="inline-list right no-margin">
+<?php
+foreach ($produto_paleta as $cor) {
+  echo '<li><span class="d-iblock" style="background-color:'. $cor['sm_cor'] .';"></span></li>';
+}
+?>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </nav>
+<?php endif; ?>
+
   <section id="gallery-prod " class="divide-30">
     <div class="row">
       <div class="small-12 columns">
@@ -106,7 +132,7 @@ if($galeria):
   foreach ($galeria as $foto):
     $descriptions[] = ($foto['description'] == "") ? $foto['caption'] : $foto['description'];
 ?>
-          <figure class="small-12 left" data-thumb="<?php echo $foto['sizes']['large']; ?>"></figure>
+          <figure class="small-12 left mask no-repeat gal-produto" data-thumb="<?php echo $foto['sizes']['large']; ?>"></figure>
 <?php
   endforeach;
 endif;
@@ -144,7 +170,9 @@ foreach ($descriptions as $caption):
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES * * */
             // Required: on line below, replace text in quotes with your forum shortname
-            var disqus_shortname = 'FORUM SHORTNAME GOES HERE';
+            var disqus_shortname = 'sergiojmatos';
+            var disqus_title = "<?php the_title(); ?>";
+            var disqus_url = "<?php the_permalink(); ?>";
             
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {

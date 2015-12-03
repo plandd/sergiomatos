@@ -13,10 +13,10 @@ $th = (isset($thumb)) ? $thumb[0] : '';
         </a>
       </h5>
     </header>
-    <a href="<?php echo get_page_link( $page->ID ); ?>" class="small-12 abs mask show-onload" title="Estúdio" data-thumb="<?php echo $th; ?>"></a>
+    <a href="<?php echo get_page_link( $page->ID ); ?>" class="small-12 abs mask show-onload" title="Estúdio" data-thumb="<?php echo $th; ?>" style="background-position-y: -100px !important;"></a>
   </div>
 
-  <div class="small-12 left inner-section rel">
+  <div class="small-12 left inner-section rel home-product">
 <?php
 $args = array( 'posts_per_page' => 1, 'orderby' => 'date', 'post_type' => 'produtos' );
 $posts = get_posts( $args );
@@ -32,7 +32,7 @@ if($posts):
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="d-block">Na loja <span class="d-block icon-cart"></span></a>
       </h5>
     </header>
-    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="small-12 abs mask show-onload" data-thumb="<?php echo $th; ?>"></a>
+    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="small-12 abs mask no-repeat show-onload" data-thumb="<?php echo $th; ?>"></a>
 <?php
   endforeach;
 endif;

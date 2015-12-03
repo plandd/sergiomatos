@@ -16,13 +16,13 @@
 
 // ** Configura????es do MySQL - Voc?? pode pegar essas informa????es com o servi??o de hospedagem ** //
 /** O nome do banco de dados do WordPress */
-define('DB_NAME', 'Wp176068');
+define('DB_NAME', 'Wp178127');
 
 /** Usu??rio do banco de dados MySQL */
-define('DB_USER', 'Wp176068');
+define('DB_USER', 'Wp178127');
 
 /** Senha do banco de dados MySQL */
-define('DB_PASSWORD', '7@8WOrj&');
+define('DB_PASSWORD', '$*16SUcn');
 
 /** nome do host do MySQL */
 define('DB_HOST', 'mysql16.redehost.com.br');
@@ -61,6 +61,7 @@ define('NONCE_SALT',       '@,H;{#~0qtpXDs19`7ClYx^?N-C-2iRvdDa=>+-9m8GpF9_s%3p{
  */
 $table_prefix  = 'wp_';
 
+
 /**
  * Para desenvolvedores: Modo debugging WordPress.
  *
@@ -68,7 +69,7 @@ $table_prefix  = 'wp_';
  * ?? altamente recomend??vel que os desenvolvedores de plugins e temas usem o WP_DEBUG
  * em seus ambientes de desenvolvimento.
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 /* Isto ?? tudo, pode parar de editar! :) */
 define('MULTISITE', true);
@@ -77,7 +78,6 @@ define('DOMAIN_CURRENT_SITE', 'sergiojmatos.com');
 define('PATH_CURRENT_SITE', '/');
 define('SITE_ID_CURRENT_SITE', 1);
 define('BLOG_ID_CURRENT_SITE', 1);
-
 
 /** Caminho absoluto para o diret??rio WordPress. */
 if ( !defined('ABSPATH') )

@@ -1,5 +1,5 @@
 <?php
-define('THEME_VERSION', '1.0.3');
+define('THEME_VERSION', '1.0.4');
 define('THEME_ICON', get_stylesheet_directory_uri() . '/images/icon.png');
 error_reporting(E_ERROR | E_PARSE);
 
@@ -165,33 +165,33 @@ function new_excerpt_length($length) {
 function loja_init() {
     $labels = array('name' => 'Produtos', 'singular_name' => 'Produto', 'add_new' => 'Adicionar Novo', 'add_new_item' => 'Adicionar novo Produto', 'edit_item' => 'Editar Produto', 'new_item' => 'Novo Produto', 'all_items' => 'Todos os Produtos', 'view_item' => 'Ver Produto', 'search_items' => 'Buscar Produtos', 'not_found' => 'N&atilde;o encontrado', 'not_found_in_trash' => 'N&atilde;o encontrado', 'parent_item_colon' => '', 'menu_name' => 'Produtos');
     
-    $args = array('labels' => $labels, 'public' => true, 'exclude_from_search' => false, 'publicly_queryable' => true, 'show_ui' => true, 'show_in_menu' => true, 'query_var' => true, 'rewrite' => array('slug' => 'produtos'), 'capability_type' => 'post', 'has_archive' => true, 'hierarchical' => true, 'menu_position' => 4, 'supports' => array('title', 'thumbnail'));
+   $args = array('labels' => $labels, 'public' => true, 'exclude_from_search' => false, 'publicly_queryable' => true, 'show_ui' => true, 'show_in_menu' => true, 'query_var' => true, 'rewrite' => array('slug' => 'produtos'), 'capability_type' => 'post', 'has_archive' => true, 'hierarchical' => true, 'menu_position' => 4, 'supports' => array('title', 'thumbnail', 'editor'));
+    
     
     register_post_type('produtos', $args);
 
     $labels = array(
-		'name'              => __( 'Grupos'),
-		'singular_name'     => __( 'Grupo'),
-		'search_items'      =>  __( 'Buscar' ),
-		'popular_items'     => __( 'Mais usados' ),
-		'all_items'         => __( 'Todos os Grupos' ),
-		'parent_item'       => null,
-		'parent_item_colon' => null,
-		'edit_item'         => __( 'Adicionar novo' ),
-		'update_item'       => __( 'Atualizar' ),
-		'rewrite'            => array( 'slug' => 'grupos' ),
-		'add_new_item'      => __( 'Adicionar novo Grupo' ),
-		'new_item_name'     => __( 'Novo' )
-	);
-
-	register_taxonomy("grupos", array("produtos"), array(
-		"hierarchical"      => true, 
-		"labels"            => $labels, 
-		"singular_label"    => "Grupo", 
-		"rewrite"           => true,
-		"add_new_item"      => "Adicionar novo Grupo",
-		"new_item_name"     => "Novo Grupo",
-	));
+    'name'              => __( 'Grupos'),
+    'singular_name'     => __( 'Grupo'),
+    'search_items'      =>  __( 'Buscar' ),
+    'popular_items'     => __( 'Mais usados' ),
+    'all_items'         => __( 'Todos os Grupos' ),
+    'parent_item'       => null,
+    'parent_item_colon' => null,
+    'edit_item'         => __( 'Adicionar novo' ),
+    'update_item'       => __( 'Atualizar' ),
+    'rewrite'            => array( 'slug' => 'grupos' ),
+    'add_new_item'      => __( 'Adicionar novo Grupo' ),
+    'new_item_name'     => __( 'Novo' )
+    );
+    register_taxonomy("grupos", array("produtos"), array(
+      "hierarchical"      => true, 
+      "labels"            => $labels, 
+      "singular_label"    => "Grupo", 
+      "rewrite"           => true,
+      "add_new_item"      => "Adicionar novo Grupo",
+      "new_item_name"     => "Novo Grupo",
+    ));
 }
 add_action('init', 'loja_init');
 
@@ -200,6 +200,87 @@ function translateSite() {
   $site_url = (get_current_blog_id() == 1) ? 'http://sergiojmatos.com/en' : 'http://sergiojmatos.com/';
   echo $site_url;
 } 
+
+//SEO
+//Pegar descrição de página ativa
+function getPageDescription() {
+  $site_description = get_bloginfo( 'description' ); 
+  if(is_home())
+    return $desc;
+  elseif(is_page() || is_single())
+    return the_excerpt();
+  elseif(is_category())
+    return get_query_var('cat');
+  else
+    return get_bloginfo( 'description' );
+}
+
+function getThumbUrl($size) {
+    global $post;
+    if(!$size) {
+        $size = 'full';
+    }
+    $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $size );
+    echo $thumb[0];
+}
+
+function fb_opengraph() {
+    global $post;
+    $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'destaque.pequeno');
+    $th = (!empty($thumb[0])) ? $thumb[0] : '';
+    $site_description = get_bloginfo( 'description' ); 
+    $stylesheet_url = get_bloginfo( 'stylesheet_url' );
+    $stylesheet_directory = get_bloginfo( 'stylesheet_directory' );
+    $site_name = (is_home()) ? get_bloginfo( 'name' ) : get_the_title( $post->ID );
+    $site_url = (is_home()) ? get_bloginfo( 'siteurl' ) : get_permalink( $post->ID );
+    $keywords = 'produtos, design, desenho industrial';
+    
+    ?>
+
+    <meta name="description" content="<?php echo getPageDescription(); ?>">
+    <meta name="keywords" content="<?php echo $keywords; ?>">
+    <meta name="author" content="<?php echo $site_url; ?>">
+    <meta name="subject" content="Sérgio J. Matos">
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="<?php echo $site_name; ?>">
+    <meta itemprop="description" content="<?php echo getPageDescription(); ?>">
+    <?php if(is_home()): ?>
+      <meta itemprop="image" content="<?php echo $stylesheet_directory; ?>/screenshot.png">
+    <?php else: ?><meta itemprop="image" content="<?php getThumbUrl(); ?>"><?php endif; ?>
+
+    <!-- Twitter Card data -->
+    <?php if(is_home()): ?>
+      <meta name="twitter:card" content="<?php echo $stylesheet_directory; ?>/screenshot.png">
+    <?php else: ?><meta name="twitter:card" content="<?php getThumbUrl(); ?>"><?php endif; ?>
+    <meta name="twitter:site" content="@sergiojmatos">
+    <meta name="twitter:title" content="<?php echo $site_name; ?>">
+    <meta name="twitter:description" content="<?php echo getPageDescription(); ?>">
+    <meta name="twitter:creator" content="@sergiojmatos">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <?php if(is_home()): ?>
+      <meta name="twitter:image:src" content="<?php echo $stylesheet_directory; ?>/screenshot.png">
+    <?php else: ?><meta name="twitter:image:src" content="<?php getThumbUrl(); ?>"><?php endif; ?>
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="<?php echo $site_name; ?>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<?php echo $site_url; ?>" />
+    <?php if(is_home()): ?>
+      <meta property="og:image" content="<?php echo $stylesheet_directory; ?>/screenshot.png" />
+    <?php else: ?><meta property="og:image" content="<?php getThumbUrl(); ?>" /><?php endif; ?>
+    <meta property="og:description" content="<?php echo getPageDescription(); ?>" />
+    <meta property="og:site_name" content="<?php echo $site_name; ?>" />
+    
+    <?php if(!is_home()): ?>
+      <meta property="article:section" content="Artigo" />
+      <meta property="article:tag" content="<?php echo $keywords; ?>" />
+    <?php endif; ?>
+ 
+<?php
+  echo get_field('pba_analytics', 'option');
+}
+add_action('wp_head', 'fb_opengraph', 5);
 
 //Opções para o tema
 require_once (dirname(__FILE__) . '/includes/redux/redux-framework.php');
